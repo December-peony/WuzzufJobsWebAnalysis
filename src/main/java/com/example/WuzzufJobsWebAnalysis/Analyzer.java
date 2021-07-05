@@ -28,7 +28,7 @@ public class Analyzer {
         this.area = t.filterByArea(10);
         //System.out.println(t.filterBySkills(10).print());
         this.YearsExp= t.filterByExperience(10);
-        Table tbl =t.get_DataTable();
+        Table tbl =t.getDataSetTable();
         System.out.println(tbl.print(10));
         System.out.println(tbl.structure());
 
