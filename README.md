@@ -63,27 +63,27 @@ access : <a>http://localhost:3030/PopularJobTitles</a>
 
 ![](https://github.com/December-peony/WuzzufJobsWebAnalysis/blob/master/src/main/resources/static/Jobs.png)
 
-### - Popular Areas function:
+### Popular Areas function:
 
 access : <a>http://localhost:3030/PopularAreas</a>
 * Returns a ResponseEntity Object containing  the most popular areas.
 
 ![](https://github.com/December-peony/WuzzufJobsWebAnalysis/blob/master/src/main/resources/static/Areas.png)
 
-### - Popular Skills function:
+### Popular Skills function:
 
 access : <a>http://localhost:3030/PopularSkills</a>
 * Returns a ResponseEntity Object containing the most required skills.
 * Showing on server as json.
 * Ps: you can get more than the top ten skills by changing the size sent to filterBySkills function in Analyzer Class.
 
-### - Years of experience factrozatied function:
+### Years of experience factrozatied function:
 
 access : <a>http://localhost:3030/YearsExp</a>
 * Returns a ResponseEntity Object containing two columns, the first is the years of experience, the second how many it's required.
 
 
-### - Analysis function:
+### Analysis function:
 
 access : <a>http://localhost:3030/Analysis</a>
 * Model and view analysis html contains the three generated charts as a sum up.
