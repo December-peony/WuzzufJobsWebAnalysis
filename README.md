@@ -3,7 +3,7 @@
 Reading, cleaning wuzzuf(Egyptain jobs website) data set and produce statistics about job market in Egypt.\
 dataset source : <a>https://www.kaggle.com/omarhanyy/wuzzuf-jobs</a> \
 Project is done using java, displaying results as json on a spring boot web serivce. 
-* This project is a final project for java module at AI engineer at ITI Egypt. 
+* This project is a final project for java module at AI track-ITI Egypt. 
 
 
 
