@@ -59,6 +59,7 @@ public class AnalyzerWebService {
 
     @RequestMapping("/PopularJobTitles")
     public ResponseEntity<Object> jobs() {
+
         return new ResponseEntity<>(titles, HttpStatus.OK);
     }
 

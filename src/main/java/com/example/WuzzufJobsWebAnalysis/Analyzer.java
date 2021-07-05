@@ -16,7 +16,8 @@ public class Analyzer {
     private LinkedHashMap<String, Long> YearsExp;
 
     public Analyzer() throws IOException {
-        Logger.getLogger("org").setLevel(Level.ERROR);
+        Logger.getLogger("org").setLevel(Level.OFF);
+        Logger.getLogger("akka").setLevel(Level.OFF);
         DAO t = new DAO();
         t.DAO("in/Wuzzuf_Jobs.csv");
         t.sumUp();
