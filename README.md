@@ -7,6 +7,11 @@ Project is done using java, displaying results as json on a spring boot web seri
 
 
 
+# Running the project:
+
+* Run the main and wait for console to print "Done!"
+
+# Overview
 
 ## Data reading and cleaning:
 
