@@ -13,6 +13,17 @@ Project is done using java, displaying results as json on a spring boot web seri
 
 # Overview
 
+
+
+## DAO() Constructor
+ * Takes the dataset file path as argument 
+ * Reads the data as RDD : Assigns a string RDD holding the dataset in the csv file to the class attribute "jobs"
+ * Cleans the data : Removes entries with null values and the header
+ * Splits RDD to separate Table columns and trim spaces
+ * Mines the data in the columns.
+ * Merge columns in one tablesaw Table and assign it's value to the class attribute "DataSetTable"
+
+
 ## Data reading and cleaning:
 
 * For data reading we used spark rdd.
@@ -25,18 +36,51 @@ Project is done using java, displaying results as json on a spring boot web seri
 * Returns A table of two columns, the first column is the Category and the second is the count, reduced to the sent size.
 * Ex: size = 10 >> returns only 10 first rows.
 
+### filterByTitle function:
+
+* Function takes size as input.
+* Calls filerTable() to return a table that holds "Title" versus count and print it in the console.
+* Visualize the table using bar chart by calling the function makeBarChart()
+* Extract table columns as lists and create a hash map using MakeMapFromLists() function
+* returns the map
+
+
+### filterByCompany function:
+
+* Function takes size as input.
+* Calls filerTable() to return a table that holds "Company" versus count and print it in the console.
+* Visualize the table using pie chart by calling the function makePieChart()
+* Extract table columns as lists and create a hash map using MakeMapFromLists() function
+* returns the map
+
+
+### filterByArea function:
+
+* Function takes size as input.
+* Calls filerTable() to return a table that holds Location "Areas" versus count and print it in the console.
+* Visualize the table using bar chart by calling the function makeBarChart()
+* Extract table columns as lists and create a hash map using MakeMapFromLists() function
+* returns the map
+
+
 ### filterByExperience function:
 
 * Function takes size as input.
-*
-*
-
+* Extracts n from YearsExp column written as "n Yrs of Exp" .
+* Converts n List into integer column "Numeric YearsExp" .
+* Appends "Numeric YearsExp" column to the table .
+* Calls filerTable() to return a table that holds "Numeric YearsExp" versus count and print it in the console.
+* Extract table columns as lists and create a hash map using MakeMapFromLists() function
+* returns the map
 
 ### filterBySkills function:
 
 * Function takes size as input.
-*
-*
+* Collects all skills in one list.
+* Forms a string column "skills" from the list .
+* Create a table with two columns ("skills" and "Count")
+* Extract table columns as lists and create a hash map using MakeMapFromLists() function
+* returns the map
 
 ### makeBarChart & makePieChart functions:
 
