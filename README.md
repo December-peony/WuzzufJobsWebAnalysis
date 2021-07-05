@@ -126,10 +126,15 @@ access : <a>http://localhost:3030/PopularSkills</a>
 * Showing on server as json.
 * Ps: you can get more than the top ten skills by changing the size sent to filterBySkills function in Analyzer Class.
 
+![](https://github.com/December-peony/WuzzufJobsWebAnalysis/blob/master/out/Skills.png)
+
+
 ### Years of experience factrozatied function:
 
 access : <a>http://localhost:3030/YearsExp</a>
 * Returns a ResponseEntity Object containing two columns, the first is the years of experience, the second how many it's required.
+
+![](https://github.com/December-peony/WuzzufJobsWebAnalysis/blob/master/out/Years.png)
 
 
 ### Analysis function:
