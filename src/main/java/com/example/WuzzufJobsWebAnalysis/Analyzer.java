@@ -16,10 +16,11 @@ public class Analyzer {
     private LinkedHashMap<String, Long> YearsExp;
 
     public Analyzer() throws IOException {
-        Logger.getLogger("org").setLevel(Level.OFF);
-        Logger.getLogger("akka").setLevel(Level.OFF);
+
         DAO t = new DAO();
         t.DAO("in/Wuzzuf_Jobs.csv");
+        Logger.getLogger("org").setLevel(Level.OFF);
+        Logger.getLogger("akka").setLevel(Level.OFF);
         t.sumUp();
         this.skills = t.filterBySkills(10);
         this.titles = t.filterByTitle(10);
@@ -34,29 +35,19 @@ public class Analyzer {
     }
 
     public LinkedHashMap<String, Long> getSkills(){
-        //System.out.println("Help");
-        //System.out.println(this.skills);
         return this.skills;
     }
     public LinkedHashMap<String, Long> getTitles(){
-        //System.out.println("Help");
-        //System.out.println(this.skills);
         return this.titles;
     }
     public LinkedHashMap<String, Long> getCompany(){
-        //System.out.println("Help");
-        //System.out.println(this.skills);
         return this.company;
     }
     public LinkedHashMap<String, Long> getAreas(){
-        //System.out.println("Help");
-        //System.out.println(this.skills);
         return this.area;
     }
 
     public LinkedHashMap<String, Long> getYearsExp(){
-        //System.out.println("Help");
-        //System.out.println(this.skills);
         return this.YearsExp;
     }
 }

@@ -1,12 +1,15 @@
 package com.example.WuzzufJobsWebAnalysis;
 
 //import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.knowm.xchart.*;
 import org.knowm.xchart.style.Styler;
 import tech.tablesaw.api.*;
+
 
 import java.io.IOException;
 import java.util.*;
@@ -19,6 +22,7 @@ public class DAO {
     private JavaRDD<String> jobs;
     SparkConf conf = new SparkConf().setAppName("WuzzufJobs").setMaster("local[*]");
     JavaSparkContext sc = new JavaSparkContext(conf);
+
     public void DAO(String file_path){
 
         jobs = sc.textFile(file_path)
