@@ -15,7 +15,7 @@ Project is done using java, displaying results as json on a spring boot web seri
 
 
 
-## DAO() Constructor
+## DAO Constructor
  * Takes the dataset file path as argument 
  * Reads the data as RDD : Assigns a string RDD holding the dataset in the csv file to the class attribute "jobs"
  * Cleans the data : Removes entries with null values and the header
