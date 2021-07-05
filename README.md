@@ -39,7 +39,7 @@ Project is done using java, displaying results as json on a spring boot web seri
 ### filterByTitle function:
 
 * Function takes size as input.
-* Calls filerTable() to return a table that holds "Title" versus count and print it in the console.
+* Calls filterTable() to return a table that holds "Title" versus count and print it in the console.
 * Visualize the table using bar chart by calling the function makeBarChart()
 * Extract table columns as lists and create a hash map using MakeMapFromLists() function
 * returns the map
@@ -48,7 +48,7 @@ Project is done using java, displaying results as json on a spring boot web seri
 ### filterByCompany function:
 
 * Function takes size as input.
-* Calls filerTable() to return a table that holds "Company" versus count and print it in the console.
+* Calls filterTable() to return a table that holds "Company" versus count and print it in the console.
 * Visualize the table using pie chart by calling the function makePieChart()
 * Extract table columns as lists and create a hash map using MakeMapFromLists() function
 * returns the map
@@ -57,7 +57,7 @@ Project is done using java, displaying results as json on a spring boot web seri
 ### filterByArea function:
 
 * Function takes size as input.
-* Calls filerTable() to return a table that holds Location "Areas" versus count and print it in the console.
+* Calls filterTable() to return a table that holds Location "Areas" versus count and print it in the console.
 * Visualize the table using bar chart by calling the function makeBarChart()
 * Extract table columns as lists and create a hash map using MakeMapFromLists() function
 * returns the map
@@ -69,7 +69,7 @@ Project is done using java, displaying results as json on a spring boot web seri
 * Extracts n from YearsExp column written as "n Yrs of Exp" .
 * Converts n List into integer column "Numeric YearsExp" .
 * Appends "Numeric YearsExp" column to the table .
-* Calls filerTable() to return a table that holds "Numeric YearsExp" versus count and print it in the console.
+* Calls filterTable() to return a table that holds "Numeric YearsExp" versus count and print it in the console.
 * Extract table columns as lists and create a hash map using MakeMapFromLists() function
 * returns the map
 
