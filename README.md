@@ -10,6 +10,7 @@ Project is done using java, displaying results as json on a spring boot web seri
 # Running the project:
 
 * Run the main and wait for console to print "Done!"
+* Make sure you run it on 1.8 JDK.
 
 # Overview
 
