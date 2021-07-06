@@ -1,5 +1,8 @@
 package com.example.WuzzufJobsWebAnalysis;
-
+/*----------------------------------------------------
+[File Name]: Analyzer.java
+[Authors]: Esraa , Sara ,Sherry
+------------------------------------------------------*/
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import tech.tablesaw.api.Table;

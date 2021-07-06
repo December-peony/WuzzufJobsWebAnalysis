@@ -1,10 +1,10 @@
 package com.example.WuzzufJobsWebAnalysis;
 
+/*----------------------------------------------------
+[File Name]: AnalyzerWebService.java
+[Authors]: Esraa , Sara ,Sherry
+------------------------------------------------------*/
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaSparkContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +14,17 @@ import org.springframework.web.servlet.ModelAndView;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 
+/*---------------------------------------------------------------------
+[Class Name]: AnalyzerWebService
+[Description]: Gets the cleaned data and send it to server
+               accessed by get request.
+
+---------------------------------------------------------------------*/
 @RestController
 public class AnalyzerWebService {
 
-    //Analyzer analyzer = new Analyzer();
 
+    //Attributes are static to save the data and not init;ize it everytime with null
     static LinkedHashMap<String, Long> skills;
     static LinkedHashMap<String, Long> titles;
     static LinkedHashMap<String, Long> areas;
@@ -44,16 +50,13 @@ public class AnalyzerWebService {
 
 
         ModelAndView model = new ModelAndView("analysis.html");
-        //model.addObject("company", Arrays.asList("con","LLLL"));
-        //model.addObject("number", Arrays.asList(5,6));
         return model;
 
-        //return new ResponseEntity<>("Done", HttpStatus.OK);
+
 
     }
     @RequestMapping("/PopularSkills")
     public ResponseEntity<Object> skills() {
-        //Object l = this.o.clone();
         return new ResponseEntity<>(skills, HttpStatus.OK);
     }
 
