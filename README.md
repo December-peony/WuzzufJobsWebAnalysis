@@ -104,7 +104,7 @@ Using spring boot Application to create a server:
 access : <a>http://localhost:3030/PopularCompanies</a>
 * Returns a ResponseEntity Object containing the most demanding companies for jobs.
 
-![](https://github.com/December-peony/WuzzufJobsWebAnalysis/blob/master/src/main/resources/static/Companies.png)
+![](https://github.com/December-peony/WuzzufJobsWebAnalysis/blob/master/src/main/resources/templates/Companies.png)
 
 ### Popular Job Titles function:
 
