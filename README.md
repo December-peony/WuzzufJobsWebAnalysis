@@ -146,7 +146,7 @@ access : <a>http://localhost:3030/Analysis</a>
 ### Future Updates:
 * Finishing WuzzafKMeans Model that clusters the job titles and the company names into the suitable K vaule.
 
-* We have tried to creat a KMeans Class and to find the K value of the elbow bend point, but we didn't have enough time to finish this part.
+* We have tried to create a KMeans Class and to find the K value of the elbow bend point, but we didn't have enough time to finish this part.
 
 * We have also tried to Create Scatter Plot Class using jfree. 
 
