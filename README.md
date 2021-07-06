@@ -147,8 +147,8 @@ access : <a>http://localhost:3030/Analysis</a>
 
 * Finishing WuzzufKMeans Model that clusters the job titles and the company names into the suitable number of clusters (K vaule) and makes future prediction for new dataset      input points.
 
-* We have tried to create a KMeans Class that uses spark package in producing the WuzzafKMeans Model, including the calculation for the K value 
-  of the elbow bend point, but we didn't have enough time to finish this part.
+* We have tried to create a KMeans Class that uses spark package in producing the WuzzafKMeans Model, including the calculation for the 
+  K value of the elbow bend point, but we didn't have enough time to finish this part.
 
 * We have also tried to create Scatter Plot Class using jfree. 
 
