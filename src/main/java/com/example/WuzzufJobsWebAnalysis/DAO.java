@@ -369,7 +369,7 @@ public class DAO {
         //given lists on by one.
         Map<String, Long> reverseSortedMap = new LinkedHashMap<>();
         for (int i=0; i<keys.size(); i++) {
-            reverseSortedMap.put(keys.get(i), values.get(i));    // is there a clearer way?
+            reverseSortedMap.put(keys.get(i)+" ", values.get(i));    // is there a clearer way?
         }
         return reverseSortedMap;
     }
