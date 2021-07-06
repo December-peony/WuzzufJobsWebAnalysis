@@ -133,7 +133,7 @@ access : <a>http://localhost:3030/PopularSkills</a>
 ### Years of experience factrozatied function:
 
 access : <a>http://localhost:3030/YearsExp</a>
-* Returns a ResponseEntity Object containing two columns, the first is the years of experience, the second how many it's required.
+* Returns a ResponseEntity Object containing two columns, the first is the years of experience, the second is the frequency of each.
 
 ![](https://github.com/December-peony/WuzzufJobsWebAnalysis/blob/master/out/Years.png)
 
