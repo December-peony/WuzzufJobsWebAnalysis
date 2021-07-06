@@ -275,7 +275,7 @@ public class DAO {
     * [Function Name]: makeBarChart
     * [Description]: This function is responsible for making a bar chart,
     *                and saving it as a bitmap image in the folder
-    *               "target/classes/templates/"
+    *               "templates"
     * [Args]:
     *   List<String> xList: list of data to be graphed along the horizontal axis
     *   List<String> yList: list of data to be graphed along the vertical axis
@@ -291,14 +291,14 @@ public class DAO {
         chart.getStyler().setHasAnnotations(true);
         chart.addSeries(title,xList,yList);
         //Save the chart as a bitmap image with the same name of the XLabel
-        BitmapEncoder.saveBitmap(chart, "target/classes/templates/"+XLabel, BitmapEncoder.BitmapFormat.PNG);
+        BitmapEncoder.saveBitmap(chart, "src/main/resources/templates/"+XLabel, BitmapEncoder.BitmapFormat.PNG);
 
     }
     /*---------------------------------------------------------------------
     * [Function Name]: makePieChart
     * [Description]: This function is responsible for making a pie chart,
     *                and saving it as a bitmap image in the folder
-    *               "target/classes/templates/"
+    *               "templates"
     * [Args]:
     *   List<String> categories: list of pie chart slices
     *   List<String> values: value of each category(slice)
@@ -314,7 +314,7 @@ public class DAO {
             chart.addSeries(Categories.get(i),values.get(i));
         }
         //Save the chart as a bitmap image with the given file name : imageName
-        BitmapEncoder.saveBitmap(chart, "target/classes/templates/"+imageName, BitmapEncoder.BitmapFormat.PNG);
+        BitmapEncoder.saveBitmap(chart, "src/main/resources/templates/"+imageName, BitmapEncoder.BitmapFormat.PNG);
     }
     /*---------------------------------------------------------------------
     * [Function Name]: filterTable
