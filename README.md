@@ -104,7 +104,7 @@ Using spring boot Application to create a server:
 access : <a>http://localhost:3030/PopularCompanies</a>
 * Returns a ResponseEntity Object containing the most demanding companies for jobs.
 
-![](https://github.com/December-peony/WuzzufJobsWebAnalysis/blob/master/src/main/resources/templates/Companies.png)
+![](https://github.com/December-peony/WuzzufJobsWebAnalysis/blob/master/src/main/resources/static/Companies.png)
 
 ### Popular Job Titles function:
 
@@ -142,6 +142,17 @@ access : <a>http://localhost:3030/YearsExp</a>
 
 access : <a>http://localhost:3030/Analysis</a>
 * Model and view analysis html contains the three generated charts as a sum up.
+
+### Future Updates:
+* Finishing WuzzafKMeans Model that clusters the job titles and the company names into the suitable K vaule.
+
+* We have tried to creat a KMeans Class and to find the K value of the elbow bend point, but we didn't have enough time to finish this part.
+
+* We have also tried to Create Scatter Plot Class using jfree. 
+
+* We faced many difficulties and didn't have enough time to solve the problems we faced that stopped us from having the required output, 
+  but we see that we were close to finishing this part of the project and that's why we have it in our future goals to be updated.
+
 
 ## Contributors:
 * <a href="https://github.com/saramohey">Sara Mohey</a>
