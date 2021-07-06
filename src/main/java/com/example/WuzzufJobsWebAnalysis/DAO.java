@@ -38,7 +38,7 @@ import java.util.*;
 * makePieChart: creates pie chart
 * filterTable: get top ten demanding for any given table name
 * MakeMapFromRDD: converts RDD to LinkedHashMap
-* MakeMapFromLists: converts two lists to LinkedHashMap<list1,list2>
+* MakeMapFromLists: converts two lists to Map<list1,list2>
 ---------------------------------------------------------------------*/
 
 public class DAO {
@@ -128,12 +128,12 @@ public class DAO {
     * [Function Name]: filterByTitle
     * [Description]: Prints the top demanding jobs as a table-saw Table
     *                Graphs job title vs demands
-    *                returns the table as LinkedHashMap
+    *                returns the table as Map
     * [Args]:
     *     int size: size of filtered data
-    * [Returns]: LinkedHashMap map
+    * [Returns]: Map map
     ---------------------------------------------------------------------*/
-    public LinkedHashMap<String, Long> filterByTitle(int size) throws IOException {
+    public Map<String, Long> filterByTitle(int size) throws IOException {
         //creates a table with columns(title , count),sorted descendingly by count.
         Table topTitles = filterTable( "Title", size);
         //prints the table.
@@ -143,8 +143,8 @@ public class DAO {
         List count= Arrays.asList(topTitles.column("Count").asObjectArray());
         //Visualize the data as bar chart.
         makeBarChart(title,count , "Jobs' Popularity" , "Jobs");
-        //Returns a LinkedHashMap version of the table .
-        LinkedHashMap<String, Long> map = MakeMapFromLists(title,count);
+        //Returns a Map version of the table .
+        Map<String, Long> map = MakeMapFromLists(title,count);
         return map;
     }
     /*---------------------------------------------------------------------
@@ -154,9 +154,9 @@ public class DAO {
     *                returns the table as LinkedHashMap
     * [Args]:
     *     int size: size of filtered data
-    * [Returns]: LinkedHashMap map
+    * [Returns]: Map map
     ---------------------------------------------------------------------*/
-    public LinkedHashMap<String, Long> filterByCompany(int size) throws IOException {
+    public Map<String, Long> filterByCompany(int size) throws IOException {
         //creates a table with columns(company , count),sorted descendingly by count.
         Table topCompanies = filterTable( "Company", size);
         //prints the table.
@@ -166,8 +166,8 @@ public class DAO {
         List count= Arrays.asList(topCompanies.column("Count").asObjectArray());
         //Visualize the data as pie chart.
         makePieChart(company,count , "Popular Companies" , "Companies");
-        //Creates a LinkedHashMap version of the table .
-        LinkedHashMap<String, Long> map = MakeMapFromLists(company,count);
+        //Creates a Map version of the table .
+        Map<String, Long> map = MakeMapFromLists(company,count);
         return map;
         //return topCompanies;
     }
@@ -175,12 +175,12 @@ public class DAO {
     * [Function Name]: filterByArea
     * [Description]: Prints the top demanding Areas as a table-saw Table
     *                Graphs Areas vs demands
-    *                returns the table as LinkedHashMap
+    *                returns the table as Map
     * [Args]:
     *     int size: size of filtered data
-    * [Returns]: LinkedHashMap map
+    * [Returns]: Map map
     ---------------------------------------------------------------------*/
-    public LinkedHashMap<String, Long> filterByArea(int size) throws IOException {
+    public Map<String, Long> filterByArea(int size) throws IOException {
         //creates a table with columns(Area , count),sorted descendingly by count.
         Table topAreas = filterTable( "Location", size);
         //prints the table
@@ -190,8 +190,8 @@ public class DAO {
         List count= Arrays.asList(topAreas.column("Count").asObjectArray());
         //Visualize the relation between Areas and job demand as bar chart
         makeBarChart(Areas,count , "Areas' Popularity" , "Areas");
-        //Creates a LinkedHashMap version of the table .
-        LinkedHashMap<String, Long> map = MakeMapFromLists(Areas,count);
+        //Creates a Map version of the table .
+        Map<String, Long> map = MakeMapFromLists(Areas,count);
         return map;
         //return topAreas;
     }
@@ -199,12 +199,12 @@ public class DAO {
     * [Function Name]: filterByArea
     * [Description]: Prints the top demanding Areas as a table-saw Table
     *                Graphs Areas vs demands
-    *                returns the table as LinkedHashMap
+    *                returns the table as Map
     * [Args]:
     *     int size: size of filtered data
-    * [Returns]: LinkedHashMap map
+    * [Returns]: Map map
     ---------------------------------------------------------------------*/
-    public LinkedHashMap<String, Long>  filterBySkills(int size){
+    public Map<String, Long>  filterBySkills(int size){
         //get the skills part of the job RDD entries
         JavaRDD<String> skills= jobs.map(line -> line.split("\"")[1]);
         //join all skills with commas , split them again using comma and create
@@ -227,19 +227,19 @@ public class DAO {
         //extract lists from the table
         List Skills= Arrays.asList(skillsTable.column("Skills").asStringColumn().asObjectArray());
         List count= Arrays.asList(skillsTable.column("Count").asObjectArray());
-        //Creates a LinkedHashMap version of the table .
-        LinkedHashMap<String, Long> map = MakeMapFromLists(Skills,count);
+        //Creates a Map version of the table .
+        Map<String, Long> map = MakeMapFromLists(Skills,count);
         return map;
     }
     /*---------------------------------------------------------------------
     * [Function Name]: filterByExperience
     * [Description]: Prints the top job demanding Experiences as a table-saw Table
-    *                returns the table as LinkedHashMap
+    *                returns the table as Map
     * [Args]:
     *     int size: size of filtered data
-    * [Returns]: LinkedHashMap map
+    * [Returns]: Map map
     ---------------------------------------------------------------------*/
-    public LinkedHashMap<String, Long> filterByExperience(int size){
+    public Map<String, Long> filterByExperience(int size){
         //create a list from the jobs RDD of values of years of experience removing
         //the text part and taking only the upper limit of the interval
         //example: 1-3 Yrs Exp -> 1
@@ -263,8 +263,8 @@ public class DAO {
         //Extract the columns of topYrsExp as lists
         List Years= Arrays.asList(topYrsExp.column("Numeric YearsExp").asStringColumn().asObjectArray());
         List count= Arrays.asList(topYrsExp.column("Count").asObjectArray());
-        //creates and returns the LinkedHashMap version of the table
-        LinkedHashMap<String, Long> map = MakeMapFromLists(Years,count);
+        //creates and returns the Map version of the table
+        Map<String, Long> map = MakeMapFromLists(Years,count);
         return map;
         //return filterTable("Numeric YearsExp",size);
     }
@@ -306,7 +306,7 @@ public class DAO {
     ---------------------------------------------------------------------*/
     public  void makePieChart(List<String> Categories,List<Integer> values, String title , String imageName) throws IOException {
         //Creates the pie chart
-        PieChart chart = new PieChartBuilder().width(1000).height(1000).title(title).build();
+        PieChart chart = new PieChartBuilder().width(1200).height(1000).title(title).build();
         for( int i=0;i<Categories.size();i++)
         {
             chart.addSeries(Categories.get(i),values.get(i));
@@ -357,17 +357,17 @@ public class DAO {
     /*---------------------------------------------------------------------
     * [Function Name]: MakeMapFromLists
     * [Description]: This function is responsible for returning a
-    *                Sorted descendingly LinkedHashMap<keys,values> version
+    *                Sorted descendingly Map<keys,values> version
     *                from two lists
     * [Args]:
     *   List<String> keys: the keys of the map as a list
     *   List<Long> values: the values of the map as a list
-    * [Returns]: LinkedHashMap<String, Long> reverseSortedMap
+    * [Returns]: Map<String, Long> reverseSortedMap
     ---------------------------------------------------------------------*/
-    public LinkedHashMap<String, Long> MakeMapFromLists(List<String> keys,List<Long> values){
+    public Map<String, Long> MakeMapFromLists(List<String> keys,List<Long> values){
         //create an empty LinkedHashMap and insert in it the key value pairs of the
         //given lists on by one.
-        LinkedHashMap<String, Long> reverseSortedMap = new LinkedHashMap<>();
+        Map<String, Long> reverseSortedMap = new LinkedHashMap<>();
         for (int i=0; i<keys.size(); i++) {
             reverseSortedMap.put(keys.get(i), values.get(i));    // is there a clearer way?
         }

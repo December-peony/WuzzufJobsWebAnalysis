@@ -9,14 +9,15 @@ import tech.tablesaw.api.Table;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Analyzer {
 
-    private LinkedHashMap<String, Long> skills;
-    private LinkedHashMap<String, Long> titles;
-    private LinkedHashMap<String, Long> company;
-    private LinkedHashMap<String, Long> area;
-    private LinkedHashMap<String, Long> YearsExp;
+    private Map<String, Long> skills;
+    private Map<String, Long> titles;
+    private Map<String, Long> company;
+    private Map<String, Long> area;
+    private Map<String, Long> YearsExp;
 
     public Analyzer() throws IOException {
 
@@ -37,20 +38,20 @@ public class Analyzer {
 
     }
 
-    public LinkedHashMap<String, Long> getSkills(){
+    public Map<String, Long> getSkills(){
         return this.skills;
     }
-    public LinkedHashMap<String, Long> getTitles(){
+    public Map<String, Long> getTitles(){
         return this.titles;
     }
-    public LinkedHashMap<String, Long> getCompany(){
+    public Map<String, Long> getCompany(){
         return this.company;
     }
-    public LinkedHashMap<String, Long> getAreas(){
+    public Map<String, Long> getAreas(){
         return this.area;
     }
 
-    public LinkedHashMap<String, Long> getYearsExp(){
+    public Map<String, Long> getYearsExp(){
         return this.YearsExp;
     }
 }

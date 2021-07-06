@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /*---------------------------------------------------------------------
 [Class Name]: AnalyzerWebService
@@ -25,11 +26,11 @@ public class AnalyzerWebService {
 
 
     //Attributes are static to save the data and not init;ize it everytime with null
-    static LinkedHashMap<String, Long> skills;
-    static LinkedHashMap<String, Long> titles;
-    static LinkedHashMap<String, Long> areas;
-    static LinkedHashMap<String, Long> years;
-    static LinkedHashMap<String, Long> companies;
+    static Map<String, Long> skills;
+    static Map<String, Long> titles;
+    static Map<String, Long> areas;
+    static Map<String, Long> years;
+    static Map<String, Long> companies;
 
     public void AnalyzerWebService() throws IOException {
         Analyzer analyzer = new Analyzer();
