@@ -1,6 +1,9 @@
 package com.example.WuzzufJobsWebAnalysis;
-
-//import org.apache.commons.lang3.StringUtils;
+/*----------------------------------------------------
+[File Name]: DAO.java
+[Authors]: Esraa , Sara ,Sherry
+------------------------------------------------------*/
+//imports
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.spark.SparkConf;
@@ -14,7 +17,31 @@ import tech.tablesaw.api.*;
 import java.io.IOException;
 import java.util.*;
 
-//Data access object
+/*---------------------------------------------------------------------
+[Class Name]: DAO
+[Description]: Reads csv file as table and RDD.
+               Cleans,filters and visualize data.
+[Attributes]:
+* private Table DataSetTable: tablesaw table holding the whole dataset
+* private JavaRDD<String> jobs: String RDD holding the whole dataset
+* public SparkConf conf: spark configuration object
+* public JavaSparkContext sc: spark session context
+[Methods]:
+* DAO: class constructor
+* getDataSetTable: DataSetTable getter function
+* getJobs: jobs getter function
+* sumUp: prints DataSetTable summary and structure
+* filterByTitle: get top demanding jobs
+* filterByCompany: get top demanding companies
+* filterByArea: get top demanding areas
+* filterBySkills: get top demanding skills
+* filterByExperience: get top demanding years of experience
+* makeBarChart: creates bar chart
+* makePieChart: creates pie chart
+* filterTable: get top ten demanding for any given table name
+* MakeMapFromRDD: converts RDD to LinkedHashMap
+* MakeMapFromLists: converts two lists to LinkedHashMap<list1,list2>
+---------------------------------------------------------------------*/
 
 public class DAO {
 
@@ -73,19 +100,6 @@ public class DAO {
         DataSetTable=Table.create("Wuzzuf Data").addColumns(title,company,location,type,level,yExp,country,skills);
     }
     /*---------------------------------------------------------------------
-    * [Function Name]: sumUp
-    * [Description]: This function is responsible for printing
-    *                   summary and structure of DataSetTable
-    *                   in the console
-    * [Args]:No arguments
-    * [Returns]: void
-    ---------------------------------------------------------------------*/
-    public void sumUp() {
-
-        System.out.println(DataSetTable.structure());
-        System.out.println(DataSetTable.summary());
-    }
-    /*---------------------------------------------------------------------
     * [Function Name]: getDataSetTable
     * [Description]: DataSetTable Attribute getter
     * [Args]:No arguments
@@ -99,6 +113,19 @@ public class DAO {
     * [Returns]: RDD<String> jobs
     ---------------------------------------------------------------------*/
     public JavaRDD<String> getJobs() { return jobs; }
+    /*---------------------------------------------------------------------
+    * [Function Name]: sumUp
+    * [Description]: This function is responsible for printing
+    *                   summary and structure of DataSetTable
+    *                   in the console
+    * [Args]:No arguments
+    * [Returns]: void
+    ---------------------------------------------------------------------*/
+    public void sumUp() {
+
+        System.out.println(DataSetTable.structure());
+        System.out.println(DataSetTable.summary());
+    }
     /*---------------------------------------------------------------------
     * [Function Name]: filterByTitle
     * [Description]: Prints the top demanding jobs as a table-saw Table
